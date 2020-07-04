@@ -1,0 +1,23 @@
+
+Install RabbitMQ on Ubuntu
+wget -O- https://www.rabbitmq.com/rabbitmq-release-signing-key.asc | sudo apt-key add -
+echo 'deb http://www.rabbitmq.com/debian/ testing main' | sudo tee /etc/apt/sources.list.d/rabbitmq.list
+sudo apt-get update
+sudo apt-get install rabbitmq-server
+
+sudo service rabbitmq-server start
+# sudo service rabbitmq-server stop
+
+Setup RabbitMQ Web Management Console
+sudo rabbitmq-plugins enable rabbitmq_management
+
+Default Username: guest, password: guest
+
+we can add users from UI or termianl
+sudo rabbitmqctl add_user admin password
+
+http://localhost:15672/
+
+
+
+
